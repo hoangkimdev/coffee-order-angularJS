@@ -1,0 +1,166 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background-image: url('img/bgr.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.container{
+    width: 70%;
+}
+.clear{
+    clear: both;
+}
+.bgr-aliceblue{
+    background-color:rgba(240,248,255, 0.8);
+}
+.bgr-aliceblue:hover{
+    background-color:rgba(240,248,255, 1);
+}
+/* ##################### nav ########################### */
+.topnav{
+    text-align: center;
+    background-color: green;
+    padding: 6px 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.topnav a{
+    text-decoration: none;
+    padding: 0 40px;
+    font-size: large;
+    color: white;
+}
+/* ###################### order ########################### */
+.listItem{
+    float: left;
+    width: 67%;
+}
+.bill-temp{
+    float: right;
+    width: 33%;
+    text-align: center;
+}
+.a-item {
+    display: inline-block;
+    width: 31.33%;
+    height: 280px;
+    margin: 1%;
+    padding: 0;
+    border: solid 4px green;
+    border-radius: 8px;
+    position: relative;
+}
+
+.a-item img {
+    width: 100%;
+    height: 74%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.a-item .decript {
+    padding: 12px;
+}
+
+.decript .price {
+    color:green;
+    font-size: larger;
+    font-weight: 700;
+    text-align: right;
+    margin-top: 0;
+}
+
+/* ######################## admin ######################### */
+#manageView{
+    display: none;
+}
+.menuAdmin{
+    margin-top: 4%;
+    width: 60%;
+    border: 4px solid green;
+}
+
+/* nameApp */
+.nameApp{
+    padding: 20px 0;
+    background-color:aliceblue;
+    text-align: center;
+    font-size: x-large;
+}
+
+/* menuList */
+.table-item-list{
+    width: 100%;
+    text-align: center;
+    background-color:white;
+}
+.table-item-list td, .table-item-list th{
+    border-bottom: 1px solid green;
+    padding: 4px 0;
+}
+.table-item-list img{
+    width: 60px;
+    height: 50px;
+}
+.btnRemove{
+    color: green;
+}
+
+/* addGroup */
+.addGroup{
+    padding: 20px 0;
+    background-color:aliceblue;
+    text-align: center;
+}
+.addGroup input{
+    width: 40%;
+    height: 30px;
+}
+.btnAdd{
+    width: 40%;
+    height: 30px;
+    background-color: green;
+    color: white;
+}
+.errorText{
+    color: red;
+}
+
+/* HISTORY ############ */
+
+#historyView{
+    display: none;
+}
+
+/* Reponsive */
+@media screen and (max-width: 1024px){
+    .menuAdmin{
+        width: 60%;
+    }
+    .btnRemove{
+        right: 26%;
+    }
+}
+@media screen and (max-width: 500px){
+    .menuAdmin{
+        width: 80%;
+    }
+    .btnRemove{
+        right: 18%;
+    }
+    .nameApp{
+        font-size: large;
+    }
+    .aProduct{
+        font-size: small;
+    }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="container" ng-app='coffeeOrder' ng-controller="appCtrl">
+
+    <div class="topnav">
+        <a href="#" onclick="showOderView()">Order</a>
+        <a href="#" onclick="showManageView()">Manage</a>
+        <a href="#" onclick="showHistoryView()">Sales history</a>
+    </div>
+
+    <!-- ORDER VIEW -->
+    <div id="orderView">
+        <div class="listItem">
+            <div ng-repeat='item in itemList' class="a-item bgr-aliceblue" ng-click='addItemtoBill($index)'>
+                <img src="{{item.avtUrl}}" alt="img">
+                <div class="decript">
+                    <h5>{{item.name}}</h5>
+                    <div class="price">{{item.price}} đ</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bill-temp">
+            <div class="nameApp">Bill</div>
+            <table class="table-item-list">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+                </tr>
+                <tr ng-repeat='item in orderTemp'>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td><span class="btnRemove" ng-click='removeItemFromBill($index)'>
+                            <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                        </span></td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <th>{{totalOrderTemp}}</th>
+                    <th><button ng-click='saveBill()'>Pay</button></th>
+                </tr>
+            </table>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <!-- ADMIN VIEW -->
+
+    <div id="manageView" class='menuAdmin'>
+        <div class="nameApp">Menu list (admin)</div>
+
+        <table class="table-item-list">
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Remove</th>
+            </tr>
+            <tr ng-repeat='item in itemList'>
+                <td><img src="{{item.avtUrl}}" alt="img"></td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td><span class="btnRemove" ng-click='removeItem($index)'>
+                        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                    </span></td>
+            </tr>
+        </table>
+
+        <div class='addGroup'>
+            <input type="text" ng-model='newItemName' placeholder="Name">
+            <br>
+            <input type="number" ng-model='newItemPrice' placeholder="Price">
+            <br>
+            <button class='btnAdd' ng-click='addItem()'>Add</button>
+            <p class='errorText'>{{errorText}}</p>
+        </div>
+    </div>
+
+    <!-- SALE HISTORY -->
+
+    <div id="historyView">
+        <div class="nameApp">Sales history</div>
+            <table class="table-item-list">
+                <tr>
+                    <th>Date time</th>
+                    <th>Total bill</th>
+                   
+                </tr>
+                <tr ng-repeat='bill in saleHistory'>
+                    <td>{{bill.datetime}}</td>
+                    <td>{{bill.total}}</td>
+                </tr>
+            </table>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
