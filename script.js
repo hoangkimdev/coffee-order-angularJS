@@ -126,6 +126,8 @@ app.controller('appCtrl', function($scope){
                 price: $scope.newItemPrice,
                 avtUrl: $scope.avtPara
             });
+            $scope.newItemName = null;
+            $scope.newItemPrice = null;
         }
     };
     $scope.removeItem = function(index){

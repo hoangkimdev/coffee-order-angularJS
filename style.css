@@ -46,6 +46,7 @@ body{
     width: 67%;
 }
 .bill-temp{
+    padding: 1% 0;
     float: right;
     width: 33%;
     text-align: center;
