@@ -1,28 +1,7 @@
-//JS
-
-function showOderView(){
-    document.getElementById("orderView").style.display = "block";
-    document.getElementById("manageView").style.display = "none";
-    document.getElementById("historyView").style.display = "none";
-}
-
-function showManageView(){
-    document.getElementById("orderView").style.display = "none";
-    document.getElementById("manageView").style.display = "block";
-    document.getElementById("historyView").style.display = "none";
-}
-
-function showHistoryView(){
-    document.getElementById("orderView").style.display = "none";
-    document.getElementById("manageView").style.display = "none";
-    document.getElementById("historyView").style.display = "block";
-}
-
 //AngularJS
-
 var app = angular.module('coffeeOrder', []);
 
-app.controller('appCtrl', function($scope){
+app.controller('appController', function($scope){
     // data demo <-- get from server (php, asp)
     $scope.itemList = [
         {
